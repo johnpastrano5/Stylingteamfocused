@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <View style= {styles.header}>
         <Image source={TF} style={styles.logoheader}/>
-      <Text style = {styles.HeaderTitle}>Team Focused</Text>
+      <Text style = {styles.HeaderTitle}>{props.title}</Text>
     </View>
   )
 }
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         height: 150,
         paddingTop: 36,
         backgroundColor: '#08313A',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         
 
     },
