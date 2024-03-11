@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         height: 120,
         paddingTop: 20,
         alignItems: 'center',
-      
+        backgroundColor: '#f5f5f5',
     },
     logoheader: {
       width: 80,
@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
     },
     HeaderTitle: {
       alignItems: 'center',
-      justifyContent: 'center', 
+      justifyContent: 'center',
+      fontWeight: 'bold',
+        color: 'black', 
     }
 
    

@@ -32,22 +32,22 @@ const styles = StyleSheet.create({
         padding: 10
     },
     title: {
-        fontSize: 18,
+        fontSize: 14,
         marginBottom: 5,
         fontWeight: 'bold',
         color: 'black'
     },
     buttonsContainer: {
-        width: '100%'
+        width: '60%'
     },
     button: {
         marginTop: 10,
-        paddingVertical: 10,
-        borderRadius: 20,
+        paddingVertical: 8,
+        borderRadius: 50,
         backgroundColor: '#ADB3BC'
     },
     buttonLabel: {
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: 'bold',
         color: 'black'
     },

@@ -6,7 +6,6 @@ const Landing = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View><Image source={TFs2} styles={styles.logoheader}/></View>
-
            <Text style={styles.title}>Let Get's Started </Text>
             <View style={styles.buttonsContainer}>
                 <Button
@@ -34,7 +33,7 @@ const Landing = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 0.8,
+        
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffffff',
@@ -43,28 +42,28 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-        marginBottom: 10,
+        marginBottom: 7,
         fontWeight: 'bold',
         color: 'black',
     },
     buttonsContainer: {
-        width: '100%',
+        width: '60%',
     },
     button: {
         marginTop: 5,
-        paddingVertical: 10,
-        borderRadius: 20,
+        paddingVertical: 8,
+        borderRadius: 50,
         backgroundColor: '#D8D7D5',
     },
     
     signupButton: {
         marginTop: 10,
-        paddingVertical: 10,
-        borderRadius: 20,
+        paddingVertical: 8,
+        borderRadius: 50,
         backgroundColor: '#B6E5D8',
     },
     buttonLabel: {
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: 'bold',
         color: 'black',
     },

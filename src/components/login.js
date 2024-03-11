@@ -62,32 +62,32 @@ const styles = StyleSheet.create({
     },
     textInput: {
         marginTop: 5,
-        width: "100%",
+        width: "60%",
         maxWidth: '80%'
     },
     buttonsContainer: {
-        width: '100%',
+        width: '60%',
         marginTop: 20,
     },
     button: {
-        paddingVertical: 10,
-        borderRadius: 20,
+        paddingVertical: 8,
+        borderRadius: 50,
         backgroundColor: '#D8D7D5',
-        marginBottom: 10,
+        marginBottom: 8,
     },
     signupButton: {
         marginTop: 10,
-        paddingVertical: 10,
-        borderRadius: 20,
+        paddingVertical: 8,
+        borderRadius: 50,
         backgroundColor: '#B6E5D8',
     },
     buttonLabel: {
-        fontSize: 18,
+        fontSize: 14,
         fontWeight: 'bold',
         color: 'black',
     },
     forgotPasswordLabel: {
-        fontSize: 16,
+        fontSize: 14,
         color: '#007bff',
     },
 });
