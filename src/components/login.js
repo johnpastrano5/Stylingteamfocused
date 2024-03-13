@@ -11,6 +11,7 @@ const Login = ({ navigation }) => {
                 placeholder='Email'
                 label= 'Email'
                 style={styles.textInput}
+                
             />
             <TextInput
                 placeholder='Password'

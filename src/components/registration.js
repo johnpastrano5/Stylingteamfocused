@@ -3,7 +3,8 @@ import { View, StyleSheet } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
 const Registration = ({ navigation }) => {
-   
+    const [showPassword, setShowPassword] = React.useState(false);
+    const [showPassword2, setShowPassword2] = React.useState(false);
     return (
         <View style={styles.content}>
             <TextInput
@@ -15,12 +16,26 @@ const Registration = ({ navigation }) => {
                 placeholder='Password'
                 label='Password'
                 style={styles.textInput}
+                secureTextEntry={!showPassword}
+                right={
+                    <TextInput.Icon
+                        icon={showPassword ? "eye" : "eye-off"}
+                        onPress={() => setShowPassword(!showPassword)}
+                    />
+                }
                 
             />
             <TextInput
                 placeholder='Confirm Password'
                 label='Confirm Password'
                 style={styles.textInput}
+                secureTextEntry={!showPassword2}
+                right={
+                    <TextInput.Icon
+                        icon={showPassword2 ? "eye" : "eye-off"}
+                        onPress={() => setShowPassword2(!showPassword2)}
+                    />
+                }
                 
             />
             <View style={styles.buttonsContainer}>
