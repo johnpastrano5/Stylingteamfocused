@@ -2,8 +2,17 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { TextInput, Button } from 'react-native-paper';
 
-const Login = ({ navigation }) => {
+const Login = ({ navigation, onLogin }) => {
     const [showPassword, setShowPassword] = React.useState(false);
+
+    // Function to handle login button press
+    const handleLoginPress = () => {
+        // Perform login logic here
+        // For example, check credentials, authenticate user
+        
+        // Once login is successful, call the onLogin function passed from the parent component
+        onLogin();
+    };
 
     return (
         <View style={styles.content}>
@@ -11,7 +20,6 @@ const Login = ({ navigation }) => {
                 placeholder='Email'
                 label= 'Email'
                 style={styles.textInput}
-                
             />
             <TextInput
                 placeholder='Password'
@@ -29,7 +37,7 @@ const Login = ({ navigation }) => {
                 <Button
                     icon="login"
                     mode="contained"
-                    onPress={() => navigation.navigate('home')}
+                    onPress={handleLoginPress} // Call handleLoginPress function on button press
                     style={styles.button}
                     labelStyle={styles.buttonLabel}
                 >
