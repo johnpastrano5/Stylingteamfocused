@@ -4,42 +4,47 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import 'react-native-gesture-handler';
+
 import Header from './src/components/Header';
 import Landing from './src/components/landing';
 import Login from './src/components/login';
 import Registration from './src/components/registration';
 import AccountRecovery from './src/components/accountrecovery';
-import Feed from './src/components/home';
+import Home from './src/components/home';
 
 const Stack = createStackNavigator();
 
 export default function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
+  
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Function to handle successful login
-  const handleLogin = () => {
-    setLoggedIn(true);
+  
+  const handleAuthentication = () => {
+    setIsAuthenticated(true); 
   };
 
   return (
     <SafeAreaProvider>
-      <View style={styles.container}>
-        <Header />
+      <View>
+        <Header/>
       </View>
       <NavigationContainer>
-        <Stack.Navigator>
-          {loggedIn ? (
-            <Stack.Screen name="Home" component={Feed} options={{ headerShown: false }} />
-          ) : (
-            <>
-              <Stack.Screen name="Landingpage" component={Landing} options={{ headerShown: false }} />
-              <Stack.Screen name="login">
-                {(props) => <Login {...props} onLogin={handleLogin} />}
-              </Stack.Screen>
-              <Stack.Screen name="registration" component={Registration} options={{ headerShown: false }} />
-              <Stack.Screen name="accountrecovery" component={AccountRecovery} options={{ headerShown: false }} />
-            </>
-          )}
+        <Stack.Navigator initialRouteName='Landing'>
+          <Stack.Screen name="Landing" component={Landing} options={{ headerShown: false }} />
+          <Stack.Screen name="Login">
+            {props => <Login {...props} onAuthenticate={handleAuthentication} options={{ headerShown: false }} />}
+          </Stack.Screen>
+          <Stack.Screen name="Registration" component={Registration} options={{ headerShown: false }} />
+          <Stack.Screen name="AccountRecovery" component={AccountRecovery} options={{ headerShown: false }} />
+          <Stack.Screen 
+            name="Home"
+            component={Home}
+            initialParams={{ isAuthenticated: isAuthenticated }}
+            options={{ 
+              headerShown: false, 
+              headerLeft: null 
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
@@ -48,6 +53,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: '#fff',
+  },
+  content: {
     alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
   },
 });

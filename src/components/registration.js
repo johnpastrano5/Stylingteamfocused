@@ -22,8 +22,7 @@ const Registration = ({ navigation }) => {
                         icon={showPassword ? "eye" : "eye-off"}
                         onPress={() => setShowPassword(!showPassword)}
                     />
-                }
-                
+                }  
             />
             <TextInput
                 placeholder='Confirm Password'
@@ -35,14 +34,13 @@ const Registration = ({ navigation }) => {
                         icon={showPassword2 ? "eye" : "eye-off"}
                         onPress={() => setShowPassword2(!showPassword2)}
                     />
-                }
-                
+                }  
             />
             <View style={styles.buttonsContainer}>
                 <Button
                     icon="arrow-left"
                     mode="outlined"
-                    onPress={() => navigation.navigate('login')}
+                    onPress={() => navigation.navigate('Login')}
                     style={[styles.button, styles.backButton]}
                     labelStyle={styles.buttonLabel}
                 >

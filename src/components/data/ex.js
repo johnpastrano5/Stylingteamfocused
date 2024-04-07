@@ -1,23 +1,54 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Button, Text } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import HomeScreen from './screens/HomeScreen';
-import CategoryScreen from './screens/CategoryScreen';
-import FavoritesScreen from './screens/FavoritesScreen';
-import ServicesScreen from './screens/ServicesScreen'; 
-import FiltersScreen from './screens/FiltersScreen'; 
-import AboutUsScreen from './screens/AboutUsScreen';
-import ContactScreen from './screens/ContactScreen';
-import LogoutScreen from './screens/LogoutScreen'; 
+function HomeScreen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Home Screen</Text>
+    </View>
+  );
+}
 
+function CategoryScreen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Category Screen</Text>
+    </View>
+  );
+}
+
+function FavoritesScreen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Favorites Screen</Text>
+    </View>
+  );
+}
+
+function FilterScreen({ navigation }) {
+  return (
+    <View style={styles.screen}>
+      <Text>Filter Screen</Text>
+      <Button title="Go to Details" onPress={() => navigation.navigate('Details')} />
+    </View>
+  );
+}
+
+function SettingsScreen() {
+  return (
+    <View style={styles.screen}>
+      <Text>Settings Screen</Text>
+    </View>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
-
 
 function MyTabs() {
   return (
@@ -28,16 +59,16 @@ function MyTabs() {
           if (route.name === 'Home') {
             iconName = 'home';
           } else if (route.name === 'Category') {
-            iconName = 'grid';
+            iconName = 'apps';
           } else if (route.name === 'Fav') {
-            iconName = 'star';
+            iconName = 'pentagram';
           }
           return <MaterialCommunityIcons name={iconName} size={size} color={color} />;
         },
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-      <Tab.Screen name="Category" component={CategoryScreen}options={{ headerShown: false }}  />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Category" component={CategoryScreen} options={{ headerShown: false }} />
       <Tab.Screen name="Fav" component={FavoritesScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
@@ -47,19 +78,17 @@ function MyDrawer() {
   return (
     <Drawer.Navigator initialRouteName="Home">
       <Drawer.Screen name="Home" component={MyTabs} />
-      <Drawer.Screen name="Services" component={ServicesScreen} />
-      <Drawer.Screen name="Filters" component={FiltersScreen} />
-      <Drawer.Screen name="About Us" component={AboutUsScreen} />
-      <Drawer.Screen name="Contact" component={ContactScreen} />
-      <Drawer.Screen name="Logout" component={LogoutScreen} />
+      <Drawer.Screen name="Filter" component={FilterScreen} />
+      <Drawer.Screen name="Settings" component={SettingsScreen} />
     </Drawer.Navigator>
   );
 }
 
 export default function Home() {
   return (
-    <NavigationContainer independent={true}>
+    <NavigationContainer>
       <View style={styles.container}>
+        <StatusBar style="auto" />
         <MyDrawer />
       </View>
     </NavigationContainer>
@@ -76,9 +105,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  button: {
-    paddingVertical: 10,
-    borderRadius: 20,
-    marginBottom: 10,
-},
-});
+})

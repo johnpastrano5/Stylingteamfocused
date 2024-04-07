@@ -1,17 +1,18 @@
 import React from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import { Text, Button } from 'react-native-paper';
-import TFs2 from '../../assets/TFs2.png'
+import TFs2 from '../../assets/TFs2.png';
+
 const Landing = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View><Image source={TFs2} styles={styles.logoheader}/></View>
-           <Text style={styles.title}>Let Get's Started </Text>
+           <Text style={styles.title}>Let's Get Started </Text>
             <View style={styles.buttonsContainer}>
                 <Button
                     icon="login"
                     mode="contained"
-                    onPress={() => navigation.navigate('login')}
+                    onPress={() => navigation.navigate('Login')}
                     style={styles.button}
                     labelStyle={styles.buttonLabel}
                 >
@@ -20,7 +21,7 @@ const Landing = ({ navigation }) => {
                 <Button
                     icon="account-plus"
                     mode="contained"
-                    onPress={() => navigation.navigate('registration')}
+                    onPress={() => navigation.navigate('Registration')}
                     style={styles.signupButton}
                     labelStyle={styles.buttonLabel}
                 >
@@ -37,8 +38,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffffff',
-        padding: 10
-       
+             
     },
     title: {
         fontSize: 18,
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         backgroundColor: '#D8D7D5',
     },
-    
     signupButton: {
         marginTop: 10,
         paddingVertical: 8,

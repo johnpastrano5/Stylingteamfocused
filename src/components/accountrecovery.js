@@ -15,7 +15,7 @@ const AccountRecovery = ({ navigation }) => {
                 <Button
                     icon="arrow-left"
                     mode="outlined"
-                    onPress={() => navigation.navigate('login')}
+                    onPress={() => navigation.navigate('Login')}
                     style={[styles.button, styles.backButton]}
                     labelStyle={styles.buttonLabel}
                 >
