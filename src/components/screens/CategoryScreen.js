@@ -27,20 +27,22 @@ const OtherScreen = () => (
   </View>
 );
 
-
 const CategoryScreen = () => {
   const navigation = useNavigation();
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Categories" component={CategoryListScreen} />
+      <Stack.Screen
+        name="Categories"
+        component={CategoryListScreen}
+        options={{ headerLeft: null }} // Remove the back button
+      />
       <Stack.Screen name="History" component={HistoryScreen} />
       <Stack.Screen name="Biology" component={BiologyScreen} />
       <Stack.Screen name="Other" component={OtherScreen} />
     </Stack.Navigator>
   );
 };
-
 
 const CategoryListScreen = () => {
   const navigation = useNavigation();
