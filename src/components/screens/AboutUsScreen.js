@@ -8,7 +8,15 @@ const AboutUsScreen = () => {
 
       <View style={styles.content}>
         <View style={styles.section}>
+        <Text style={styles.sectionTitle}>Founder:</Text>
+            <Text>John Leo F. Pastrano</Text>
+          </View>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Co-founder:</Text>
+            <Text>Beverly Jane L. Javier</Text>
+            <Text>Josephaul Pasco</Text>
           <Text style={styles.sectionTitle}>Our System</Text>
+          
           <Text>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id tortor ut elit varius commodo sit amet ac magna. Nullam euismod euismod lorem nec hendrerit. Suspendisse potenti. Sed interdum libero eget ante ultrices condimentum. Duis et elit eu massa commodo ultrices. Donec vel odio eu risus aliquam auctor. 
           </Text>

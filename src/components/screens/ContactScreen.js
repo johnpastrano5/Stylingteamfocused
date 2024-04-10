@@ -10,17 +10,6 @@ const ContactScreen = () => {
         <Text style={styles.heading}>Contact Us</Text>
 
         <View style={styles.content}>
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Founder:</Text>
-            <Text>John Leo F. Pastrano</Text>
-          </View>
-
-          <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Co-founder:</Text>
-            <Text>Beverly Jane L. Javier</Text>
-            <Text>Josephaul Pasco</Text>
-          </View>
-
           <View style={styles.imageContainer}>
             <Image
               source={maps}
