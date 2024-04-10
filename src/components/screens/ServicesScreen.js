@@ -3,35 +3,44 @@ import { View, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 
 const ServicesScreen = () => {
 
-  const handleBorrow = () => {
-    // Implement borrowing logic here
-    Alert.alert('Borrowing', 'You borrowed a book!');
+  const handleBrowseBooks = () => {
+    // Implement browsing logic here
+    Alert.alert('Browse Books', 'You are browsing the book collection!');
   };
 
-  const handleReserve = () => {
-    // Implement reserving logic here
-    Alert.alert('Reserving', 'You reserved a book!');
+  const handleSearchBooks = () => {
+    // Implement searching logic here
+    Alert.alert('Search Books', 'You are searching for books!');
   };
 
-  const handleDonate = () => {
-    // Implement donating logic here
-    Alert.alert('Donating', 'You donated a book!');
+  const handleViewFavorites = () => {
+    // Implement view favorites logic here
+    Alert.alert('View Favorites', 'You are viewing your favorite books!');
+  };
+
+  const handleRecommendations = () => {
+    // Implement recommendations logic here
+    Alert.alert('Recommendations', 'You are viewing book recommendations!');
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Services Screen</Text>
+      <Text style={styles.heading}>Explore Our Book Services</Text>
 
-      <TouchableOpacity style={styles.button} onPress={handleBorrow}>
-        <Text style={styles.buttonText}>Borrow a Book</Text>
+      <TouchableOpacity style={styles.button} onPress={handleBrowseBooks}>
+        <Text style={styles.buttonText}>Browse Books</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={handleReserve}>
-        <Text style={styles.buttonText}>Reserve a Book</Text>
+      <TouchableOpacity style={styles.button} onPress={handleSearchBooks}>
+        <Text style={styles.buttonText}>Search Books</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={handleDonate}>
-        <Text style={styles.buttonText}>Donate a Book</Text>
+      <TouchableOpacity style={styles.button} onPress={handleViewFavorites}>
+        <Text style={styles.buttonText}>View Favorites</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={handleRecommendations}>
+        <Text style={styles.buttonText}>Recommendations</Text>
       </TouchableOpacity>
 
     </View>
@@ -43,12 +52,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f0f0f0',
+    padding: 20,
   },
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    textAlign: 'center',
   },
   button: {
     backgroundColor: '#2196F3',
