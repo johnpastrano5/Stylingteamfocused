@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const FilterScreen = ({ navigation }) => {
+const FilterScreen = () => {
   const [filterMode, setFilterMode] = useState('dark');
-
-  const navigateToCategory = (categoryName) => {
-    navigation.navigate(categoryName);
-  };
 
   const applyFilter = () => {
     console.log('Applying filter:', filterMode);
@@ -14,39 +10,35 @@ const FilterScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.screen}>
-      <Text style={styles.heading}>Filters</Text>
+    <View style={styles.container}>
+      <Text style={styles.heading}>Filter Books</Text>
 
       <TouchableOpacity
         style={[styles.filterButton, filterMode === 'dark' && styles.darkMode]}
         onPress={() => setFilterMode('dark')}>
-        <Text style={styles.filterButtonText}>Dark</Text>
+        <Text style={styles.filterButtonText}>Dark Theme</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-        style={[styles.filterButton, filterMode === 'white' && styles.whiteMode]}
-        onPress={() => setFilterMode('white')}>
-        <Text style={styles.filterButtonText}>White</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={[styles.filterButton, filterMode === 'gray' && styles.grayMode]}
-        onPress={() => setFilterMode('gray')}>
-        <Text style={styles.filterButtonText}>Gray</Text>
+        style={[styles.filterButton, filterMode === 'light' && styles.lightMode]}
+        onPress={() => setFilterMode('light')}>
+        <Text style={styles.filterButtonText}>Light Theme</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.applyButton} onPress={applyFilter}>
-        <Text style={styles.applyButtonText}>Apply</Text>
+        <Text style={styles.applyButtonText}>Apply Filter</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#f0f0f0',
+    padding: 20,
   },
   heading: {
     fontSize: 24,
@@ -54,6 +46,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   filterButton: {
+    backgroundColor: '#ddd',
     padding: 10,
     borderRadius: 5,
     marginBottom: 10,
@@ -64,12 +57,10 @@ const styles = StyleSheet.create({
   },
   darkMode: {
     backgroundColor: '#333',
+    color: '#fff',
   },
-  whiteMode: {
+  lightMode: {
     backgroundColor: '#fff',
-  },
-  grayMode: {
-    backgroundColor: '#ccc',
   },
   applyButton: {
     backgroundColor: '#2196F3',
