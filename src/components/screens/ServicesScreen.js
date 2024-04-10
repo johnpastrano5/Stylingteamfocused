@@ -1,26 +1,25 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
 
-const ServicesScreen = () =>  {
- 
+const ServicesScreen = () => {
+
   const handleBorrow = () => {
-    
-    console.log("Borrowing a book...");
+    // Implement borrowing logic here
+    Alert.alert('Borrowing', 'You borrowed a book!');
   };
 
   const handleReserve = () => {
-    
-    console.log("Reserving a book...");
+    // Implement reserving logic here
+    Alert.alert('Reserving', 'You reserved a book!');
   };
 
-
   const handleDonate = () => {
-    
-    console.log("Donating a book...");
+    // Implement donating logic here
+    Alert.alert('Donating', 'You donated a book!');
   };
 
   return (
-    <View style={styles.screen}>
+    <View style={styles.container}>
       <Text style={styles.heading}>Services Screen</Text>
 
       <TouchableOpacity style={styles.button} onPress={handleBorrow}>
@@ -35,16 +34,16 @@ const ServicesScreen = () =>  {
         <Text style={styles.buttonText}>Donate a Book</Text>
       </TouchableOpacity>
 
-      
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: {
+  container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#fff',
   },
   heading: {
     fontSize: 24,
@@ -53,9 +52,10 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#2196F3',
-    padding: 10,
-    borderRadius: 5,
-    marginBottom: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 40,
+    borderRadius: 30,
+    marginBottom: 20,
   },
   buttonText: {
     color: 'white',
@@ -64,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ServicesScreen 
+export default ServicesScreen

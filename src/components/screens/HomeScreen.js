@@ -1,15 +1,20 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native';
-import history from  '../../../assets/history.png';
-import other from  '../../../assets/other.png';
-import biology from  '../../../assets/biology.png';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-const HomeScreen = ({ navigation }) => {
-  const windowWidth = Dimensions.get('window').width;
+import history from '../../../assets/history.png';
+import other from '../../../assets/other.png';
+import biology from '../../../assets/biology.png';
 
+const HomeScreen = () => {
+  const navigation = useNavigation();
+  
   const navigateToScreen = (screenName) => {
     navigation.navigate(screenName);
   };
+
+  // Define a fixed size for the images
+  const imageSize = 100;
 
   return (
     <View style={styles.container}>
@@ -18,7 +23,7 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigateToScreen('HistoryScreen')} style={styles.imageWrapper}>
           <Image
             source={history}
-            style={styles.image}
+            style={[styles.image, { width: imageSize, height: imageSize }]}
             resizeMode="contain"
           />
           <Text style={styles.categoryText}>History</Text>
@@ -27,7 +32,7 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigateToScreen('BiologyScreen')} style={styles.imageWrapper}>
           <Image
             source={biology}
-            style={styles.image}
+            style={[styles.image, { width: imageSize, height: imageSize }]}
             resizeMode="contain"
           />
           <Text style={styles.categoryText}>Biology</Text>
@@ -36,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigateToScreen('OtherScreen')} style={styles.imageWrapper}>
           <Image
             source={other}
-            style={styles.image}
+            style={[styles.image, { width: imageSize, height: imageSize }]}
             resizeMode="contain"
           />
           <Text style={styles.categoryText}>Other</Text>
@@ -51,14 +56,15 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#f5f5f5',
     padding: 20,
   },
   heading: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginBottom: 30,
     textAlign: 'center',
+    color: '#333',
   },
   imageContainer: {
     flexDirection: 'row',
@@ -68,19 +74,30 @@ const styles = StyleSheet.create({
   },
   imageWrapper: {
     alignItems: 'center',
+    backgroundColor: '#fff',
+    borderRadius: 15,
+    padding: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   image: {
-    height: 150,
-    width: 150,
-    borderRadius: 75,
+    borderRadius: 50,
     marginBottom: 10,
     borderWidth: 1,
     borderColor: '#ccc',
   },
   categoryText: {
-    fontSize: 18,
+    fontSize: 14,
     textAlign: 'center',
     marginTop: 5,
+    color: '#333',
+    fontWeight: 'bold',
   },
 });
 
