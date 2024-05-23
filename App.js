@@ -45,7 +45,7 @@ export default function App() {
               headerLeft: null 
             }}
           />
-        </Stack.Navigator>
+        </Stack.Navigator>  
       </NavigationContainer>
     </SafeAreaProvider>
   );
